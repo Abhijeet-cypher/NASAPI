@@ -1,0 +1,132 @@
+/* style.css */
+
+/* Styles for the container */
+.container {
+    height:1%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+/* Styles for the cards grid */
+.cards ul {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards in a row */
+    gap: 20px; /* Spacing between cards */
+    padding: 0; /* Remove any default padding */
+    list-style: none; /* Remove default list styles */
+}
+
+/* Styles for individual cards */
+.image-card {
+    background-color: #222;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Styles for images within the cards */
+.image-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Styles for image information (title and description) */
+.image-info {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Pagination styles */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+    display: block;
+}
+
+/* Pagination link styles */
+.pagination a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Current page number style */
+.current {
+    font-weight: bold;
+}
+
+
+/* static/style.css */
+
+/* Navbar styles */
+/* .navbar {
+    position: sticky;
+    top: 0;
+    background-color: rgb(173, 216, 230);
+} */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    margin: 0;
+    background-color: lightblue;
+    z-index: 100; 
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px 10px 0px;
+    margin-right:100px;
+}
+
+
+.navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+ }
+
+.navbar .navbar-brand img {
+    max-height: 40px;
+    margin-left: 20px;
+}
+
+.navbar .form-inline {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .form-control {
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-right: 10px;
+}
+
+.navbar .btn-primary {
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 50px;
+}

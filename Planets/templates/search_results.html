@@ -1,0 +1,40 @@
+<!-- search_results.html -->
+{% extends 'navbar.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    <h1 class="black-theme" style="margin:10px;font-family:Helvetica ;font-size: 20px;">Search Results for "{{ query }}" :</h1>
+    <div class="cards">
+        <ul class="image-list">
+            {% for image in images %}
+            <li class="image-card">
+                <a href="{{ image.links.0.href }}" target="_blank"><img src="{{ image.links.0.href }}"
+                        alt="{{ image.data.0.title }}"></a>
+                <div class="image-info">
+                    <h2>{{ image.data.0.title }}</h2>
+                    <p class="black-theme">{{ image.data.0.description }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="pagination">
+        <span class="step-links">
+            {% if images.has_previous %}
+            <a href="?q={{ query }}&page=1" class="black-theme" style="color:Grey">&laquo; First</a>
+            <a href="?q={{ query }}&page={{ images.previous_page_number }}" style="color:Grey">Previous</a>
+            {% endif %}
+            <span class="current black-theme">
+                Page {{ images.number }} of {{ images.paginator.num_pages }}.
+            </span>
+            {% if images.has_next %}
+            <a href="?q={{ query }}&page={{ images.next_page_number }}" style="color:Grey">Next</a>
+            <a href="?q={{ query }}&page={{ images.paginator.num_pages }}" style="color:Grey">Last &raquo;</a>
+            {% endif %}
+        </span>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!-- templates/navbar.html -->
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Your NASA Explorer</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/api_logo.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body style="margin: 0;width: 100vw; height: 100vh;">
+<!-- templates/navbar.html -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'images/nasa_logo.png' %}" alt="NASA Logo" style="max-height: 40px;">
+        </a>
+        <span style="color:white;font-size: 30px;margin-left: 12%;text-align: center;background-color: #19197e;border-radius: 30px;border-width: 5px; border-color: rgb(37, 52, 134);border-style: solid;text-shadow: 1px 1px #000000;">NASA<span style="color:red;">PI</span></span>
+        <div class="ml-auto">
+            <form class="form-inline" method="GET" action="{% url 'search' %}">
+                <input class="form-control" type="text" name="q" placeholder="Search" value="{{ query }}">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+{% block content %}
+{% endblock %}
+</body>
+
