@@ -37,3 +37,9 @@ Before you begin, ensure you have met the following requirements:
 
    ```shell
    git clone https://github.com/yourusername/nasa-image-explorer.git
+
+
+Usage
+On the home page, you can enter search terms in the search bar and click "Search."
+You will be taken to the search results page displaying relevant images.
+Browse through the paginated results, click on images for more information, or navigate between pages.
